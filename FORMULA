@@ -1,0 +1,9 @@
+name: strongswan
+os: Debian, Ubuntu, Raspbian, RedHat, Fedora, CentOS, Suse, openSUSE, Gentoo, Funtoo, Arch, Manjaro, Alpine, FreeBSD, OpenBSD, Solaris, SmartOS, Windows, MacOS
+os_family: Debian, RedHat, Suse, Gentoo, Arch, Alpine, FreeBSD, OpenBSD, Solaris, Windows, MacOS
+version: 0.0.1
+release: 1
+minimum_version: 2016.11
+summary: Strongswan formula
+description: Formula to install and configure strongswan
+top_level_dir: strongswan
