@@ -1,0 +1,10 @@
+########################################################################
+# File managed by Salt at <{{ source }}>.
+# Your changes will be overwritten.
+########################################################################
+
+# basic configuration
+conn setup
+{%- for k, v in salt['pillar.get']('strongswan:config', {}).items() %}
+    {{ k }} = {{ v }}
+{%- endfor %}
