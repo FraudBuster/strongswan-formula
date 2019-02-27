@@ -1,0 +1,11 @@
+name: strongswan
+title: Strongswan Formula
+maintainer: Eric Veiras Galisson
+license: Apache-2.0
+summary: Verify that the strongswan formula is setup and configured correctly
+supports:
+  - os-name: debian
+  - os-name: ubuntu
+  - os-name: centos
+  - os-name: fedora
+  - os-name: opensuse
