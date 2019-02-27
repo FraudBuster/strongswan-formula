@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+strongswan:
+  pkg: strongswan
+  config:
+    options: /etc/ipsec.conf
+    secrets: /etc/ipsec.secrets
+#    options_dropin: /etc/ipsec.d
+#    secrets_dropin: /etc
+  service:
+    name: strongswan

@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+# vim: ft=jinja
+
+{#- Get the `topdir` from `tpldir` #}
+{%- set topdir = tpldir.split('/')[0] %}
+{#- Start imports as #}
+{%- import_yaml topdir ~ "/defaults.yaml" as default_settings %}
+{%- import_yaml topdir ~ "/osfamilymap.yaml" as osfamilymap %}
+{%- import_yaml topdir ~ "/osmap.yaml" as osmap %}
+{%- import_yaml topdir ~ "/osfingermap.yaml" as osfingermap %}
+
+{% set defaults = salt['grains.filter_by'](default_settings,
+    default='strongswan',
+    merge=salt['grains.filter_by'](osfamilymap, grain='os_family',
+      merge=salt['grains.filter_by'](osmap, grain='os',
+        merge=salt['grains.filter_by'](osfingermap, grain='osfinger',
+          merge=salt['pillar.get']('strongswan:lookup', default={})
+        )
+      )
+    )
+) %}
+
+{#- Merge the strongswan pillar #}
+{% set strongswan = salt['pillar.get']('strongswan', default=defaults, merge=True) %}
