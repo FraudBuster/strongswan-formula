@@ -36,3 +36,23 @@ ipsec-dropin-options:
     - clean: True
 {% endif %}
 
+{% for connection, data in connections.items() %}
+  {% set dropin_file = strongswan.config.dropin_options ~ '/' ~ connection ~ '.conf' %}
+ipsec-{{ connection }}-config:
+  file.managed:
+    - name: {{ dropin_file }}
+    - source: {{ files_switch(
+                    salt['config.get'](
+                        topdir ~ ':tofs:files:ipsec-connection-config',
+                        ['connection.conf.jinja']
+                    )
+              ) }}
+    - template: jinja
+    - user: root
+    - group: root
+    - mode: 644
+    - context:
+      connection: {{ connection }}
+      data: {{ data|tojson }}
+{% endfor %}
+
