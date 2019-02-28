@@ -7,6 +7,11 @@ strongswan:
   config:
     strictcrlpolicy: 'yes'
     uniqueids: 'no'
+
+  conn:
+    test1: x
+    test2: y
+
   #tofs:
     # The files_switch key serves as a selector for alternative
     # directories under the formula files directory. See TOFS pattern

@@ -9,5 +9,12 @@ control 'Strongswan configuration' do
     its('content') { should include 'conn setup' }
     its('content') { should include '   strictcrlpolicy = yes' }
     its('content') { should include '   uniqueids = no' }
+    its('content') { should include 'include /etc/ipsec.conf.d/*.conf' }
+  end
+
+  describe directory('/etc/ipsec.conf.d') do
+    it { should be_directory }
+    it { should be_owned_by 'root' }
+    it { should be_grouped_into 'root' }
   end
 end

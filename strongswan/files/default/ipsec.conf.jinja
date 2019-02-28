@@ -8,3 +8,8 @@ conn setup
 {%- for k, v in salt['pillar.get']('strongswan:config', {}).items() %}
     {{ k }} = {{ v }}
 {%- endfor %}
+
+{% if connections %}
+# include connections configurations
+include {{ dropin_dir }}/*.conf
+{% endif %}
