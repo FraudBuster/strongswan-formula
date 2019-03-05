@@ -7,6 +7,6 @@ strongswan:
     global_options: /etc/ipsec.conf
     global_secrets: /etc/ipsec.secrets
     dropin_options: /etc/ipsec.conf.d
-#    secrets_dropin: /etc
+    dropin_secrets: /etc/ipsec.secrets.d
   service:
     name: strongswan

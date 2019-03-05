@@ -29,6 +29,13 @@ strongswan:
       authby: secret
       auto: add
 
+  secrets:
+    conn_a:
+      - '10.10.1.1 : PSK "v+NkxY9LLZvwj4qCC2o/gGrWDF2d21jL"'
+
+    conn_b:
+      - 'alice@strongswan.org : EAP "x3.dEhgN"'
+
   #tofs:
     # The files_switch key serves as a selector for alternative
     # directories under the formula files directory. See TOFS pattern
