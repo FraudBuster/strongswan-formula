@@ -2,13 +2,20 @@
 # vim: ft=yaml
 ---
 strongswan:
+  # override default core settings in lookup dict
   #lookup:
 
+  # default config
   config:
     strictcrlpolicy: 'yes'
     uniqueids: 'no'
 
   conn:
+    # option %default conn
+    _default:
+      keyingtries: 1
+
+    # other conn
     conn_a:
       left: 10.10.1.1
       leftsubnet: 10.10.1.0/32
@@ -29,6 +36,7 @@ strongswan:
       authby: secret
       auto: add
 
+  # define secrets
   secrets:
     conn_a:
       - '10.10.1.1 : PSK "v+NkxY9LLZvwj4qCC2o/gGrWDF2d21jL"'

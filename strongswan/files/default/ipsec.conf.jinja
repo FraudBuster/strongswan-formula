@@ -9,7 +9,14 @@ conn setup
     {{ k }}={{ v }}
 {%- endfor %}
 
-{% if connections %}
+{% if conn_default -%}
+conn %default
+  {%- for k, v in conn_default.items() %}
+    {{ k }}={{ v }}
+  {%- endfor %}
+{%- endif %}
+
+{% if conn_dropin -%}
 # include connections configurations
 include {{ dropin_dir }}/*.conf
 {% endif %}

@@ -5,7 +5,27 @@
 {%- from tpldir ~ "/map.jinja" import strongswan with context %}
 {%- from tpldir ~ "/macros.jinja" import files_switch with context %}
 
-{%- set connections = salt['pillar.get']('strongswan:conn', {}) %}
+# splitting defined connections in two dicts
+# one for %default options
+# one for others
+{%- set conn = salt['pillar.get']('strongswan:conn', {}) %}
+{%- set connections = {} %}
+{%- set conn_default = {} %}
+
+{%- for k, v in conn.items() %}
+  {%- if k == '_default' %}
+    {%- do conn_default.update(v) %}
+  {% else %}
+    {%- do connections.update({k:v}) %}
+  {%- endif %}
+{%- endfor %}
+
+{% if connections %}
+  {% set conn_dropin = True %}
+{% else %}
+  {% set conn_dropin = False %}
+{% endif %}
+
 {%- set secrets = salt['pillar.get']('strongswan:secrets', {}) %}
 
 include:
@@ -26,7 +46,10 @@ ipsec-global-options:
     - group: root
     - template: jinja
     - context:
+## TODO ajouter config
       dropin_dir: {{ strongswan.config.dropin_options }}
+      conn_default: {{ conn_default|json }}
+      conn_dropin: {{ conn_dropin }}
       connections: {{ connections }}
 
 # Connections
