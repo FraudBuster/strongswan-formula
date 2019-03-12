@@ -50,7 +50,7 @@ This state will install the strongswan package only.
 ``strongswan.config``
 -------------------
 
-This state will configure the strongswan service and has a depency on ``strongswan.install``
+This state will configure the strongswan service and has a dependency on ``strongswan.install``
 via include list.
 
 Configuration is splitted:
