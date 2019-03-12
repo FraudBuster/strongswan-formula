@@ -13,7 +13,5 @@ strongswan-service:
     - reload: True
     - watch:
       - file: {{ strongswan.config.global_options }}
-      - file: {{ strongswan.config.dropin_options ~ '/*.conf' }}
       - file: {{ strongswan.config.global_secrets }}
-      - file: {{ strongswan.config.dropin_secrets ~ '/*.secret' }}
 

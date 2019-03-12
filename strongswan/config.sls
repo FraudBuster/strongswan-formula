@@ -80,6 +80,8 @@ ipsec-conn-{{ connection }}-config:
     - context:
       connection: {{ connection }}
       data: {{ data|tojson }}
+    - watch_in:
+      - service: strongswan-service
 {% endfor %}
 
 # Global secrets
@@ -129,5 +131,7 @@ ipsec-secret-{{ secret }}-config:
     - context:
       secret: {{ secret }}
       data: {{ data|tojson }}
+    - watch_in:
+      - service: strongswan-service
 {% endfor %}
 
