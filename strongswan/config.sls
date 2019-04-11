@@ -46,11 +46,10 @@ ipsec-global-options:
     - group: root
     - template: jinja
     - context:
-## TODO ajouter config
-      dropin_dir: {{ strongswan.config.dropin_options }}
-      conn_default: {{ conn_default|json }}
-      conn_dropin: {{ conn_dropin }}
-      connections: {{ connections }}
+        dropin_dir: {{ strongswan.config.dropin_options }}
+        conn_default: {{ conn_default|json }}
+        conn_dropin: {{ conn_dropin }}
+        connections: {{ connections }}
 
 # Connections
 {% if connections %}
@@ -78,8 +77,8 @@ ipsec-conn-{{ connection }}-config:
     - group: root
     - mode: 644
     - context:
-      connection: {{ connection }}
-      data: {{ data|tojson }}
+        connection: {{ connection }}
+        data: {{ data|tojson }}
     - watch_in:
       - service: strongswan-service
 {% endfor %}
@@ -99,8 +98,8 @@ ipsec-global-secrets:
     - group: root
     - template: jinja
     - context:
-      dropin_dir: {{ strongswan.config.dropin_secrets }}
-      secrets: {{ secrets }}
+        dropin_dir: {{ strongswan.config.dropin_secrets }}
+        secrets: {{ secrets }}
 
 # Secrets
 {% if secrets %}
@@ -129,8 +128,8 @@ ipsec-secret-{{ secret }}-config:
     - group: root
     - mode: 600
     - context:
-      secret: {{ secret }}
-      data: {{ data|tojson }}
+        secret: {{ secret }}
+        data: {{ data|tojson }}
     - watch_in:
       - service: strongswan-service
 {% endfor %}
