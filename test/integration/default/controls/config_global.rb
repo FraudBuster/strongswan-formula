@@ -6,7 +6,7 @@ control 'Strongswan global configuration' do
     it { should be_owned_by 'root' }
     it { should be_grouped_into 'root' }
     its('mode') { should cmp '0644' }
-    its('content') { should include 'conn setup' }
+    its('content') { should include 'config setup' }
     its('content') { should include '    strictcrlpolicy=yes' }
     its('content') { should include '    uniqueids=no' }
     its('content') { should include 'conn %default' }

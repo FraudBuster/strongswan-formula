@@ -4,7 +4,7 @@
 ########################################################################
 
 # basic configuration
-conn setup
+config setup
 {%- for k, v in salt['pillar.get']('strongswan:config', {}).items() %}
     {{ k }}={{ v }}
 {%- endfor %}
