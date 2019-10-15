@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/saltstack-formulas/strongswan-formula/compare/v0.2.0...v0.2.1) (2019-10-15)
+
+
+### Code Refactoring
+
+* **tofs:** upgrade for all file.managed ([](https://github.com/saltstack-formulas/strongswan-formula/commit/522aa77))
+
 # [0.2.0](https://github.com/saltstack-formulas/strongswan-formula/compare/v0.1.0...v0.2.0) (2019-10-15)
 
 

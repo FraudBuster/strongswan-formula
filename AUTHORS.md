@@ -5,7 +5,7 @@ This list is sorted by the number of commits per contributor in _descending_ ord
 Avatar|Contributor|Contributions
 :-:|---|:-:
 <img class='float-left rounded-1' src='https://avatars3.githubusercontent.com/u/52996?v=4' width='36' height='36' alt='@daks'>|[@daks](https://github.com/daks)|17
-<img class='float-left rounded-1' src='https://avatars2.githubusercontent.com/u/10231489?v=4' width='36' height='36' alt='@myii'>|[@myii](https://github.com/myii)|9
+<img class='float-left rounded-1' src='https://avatars2.githubusercontent.com/u/10231489?v=4' width='36' height='36' alt='@myii'>|[@myii](https://github.com/myii)|11
 
 ---
 
