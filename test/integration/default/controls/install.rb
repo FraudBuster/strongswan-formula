@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 control 'Strongswan package' do
   title 'should be installed'
 
