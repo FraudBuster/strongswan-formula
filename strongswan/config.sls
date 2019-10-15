@@ -3,7 +3,7 @@
 
 {%- set topdir = tpldir.split('/')[0] %}
 {%- from tpldir ~ "/map.jinja" import strongswan with context %}
-{%- from tpldir ~ "/macros.jinja" import files_switch with context %}
+{%- from tpldir ~ "/libtofs.jinja" import files_switch with context %}
 
 # splitting defined connections in two dicts
 # one for %default options
@@ -35,12 +35,10 @@ include:
 ipsec-global-options:
   file.managed:
     - name: {{ strongswan.config.global_options }}
-    - source: {{ files_switch(
-                    salt['config.get'](
-                        topdir ~ ':tofs:files:ipsec-global-options',
-                        ['ipsec.conf.jinja']
-                    )
-              ) }}
+    - source: {{ files_switch(['ipsec.conf.jinja'],
+                              lookup='ipsec-global-options'
+                 )
+              }}
     - mode: 644
     - user: root
     - group: root
@@ -66,12 +64,10 @@ ipsec-dropin-options:
 ipsec-conn-{{ connection }}-config:
   file.managed:
     - name: {{ dropin_file }}
-    - source: {{ files_switch(
-                    salt['config.get'](
-                        topdir ~ ':tofs:files:ipsec-connection-config',
-                        ['connection.conf.jinja']
-                    )
-              ) }}
+    - source: {{ files_switch(['connection.conf.jinja'],
+                              lookup='ipsec-conn-config'
+                 )
+              }}
     - template: jinja
     - user: root
     - group: root
@@ -87,12 +83,10 @@ ipsec-conn-{{ connection }}-config:
 ipsec-global-secrets:
   file.managed:
     - name: {{ strongswan.config.global_secrets }}
-    - source: {{ files_switch(
-                    salt['config.get'](
-                        topdir ~ ':tofs:files:ipsec-global-secrets',
-                        ['ipsec.secrets.jinja']
-                    )
-              ) }}
+    - source: {{ files_switch(['ipsec.secrets.jinja'],
+                              lookup='ipsec-global-secrets'
+                 )
+              }}
     - mode: 600
     - user: root
     - group: root
@@ -117,12 +111,10 @@ ipsec-dropin-secrets:
 ipsec-secret-{{ secret }}-config:
   file.managed:
     - name: {{ dropin_file }}
-    - source: {{ files_switch(
-                    salt['config.get'](
-                        topdir ~ ':tofs:files:ipsec-secret-config',
-                        ['secret.secrets.jinja']
-                    )
-              ) }}
+    - source: {{ files_switch(['secret.secrets.jinja'],
+                              lookup='ipsec-secret-config'
+                 )
+              }}
     - template: jinja
     - user: root
     - group: root
