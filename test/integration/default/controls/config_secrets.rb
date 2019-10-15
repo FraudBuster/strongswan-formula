@@ -30,6 +30,8 @@ control 'Strongswan secrets configuration' do
   # but we only verify the full content of one
   describe file('/etc/ipsec.secrets.d/conn_a.secrets') do
     its('content') { should include '# conn_a' }
-    its('content') { should include '10.10.1.1 : PSK "v+NkxY9LLZvwj4qCC2o/gGrWDF2d21jL"' }
+    its('content') do
+      should include '10.10.1.1 : PSK "v+NkxY9LLZvwj4qCC2o/gGrWDF2d21jL"'
+    end
   end
 end
