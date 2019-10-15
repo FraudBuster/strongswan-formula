@@ -1,11 +1,18 @@
-name: strongswan
-title: Strongswan Formula
-maintainer: Eric Veiras Galisson
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+name: default
+title: strongswan formula
+maintainer: SaltStack Formulas
 license: Apache-2.0
 summary: Verify that the strongswan formula is setup and configured correctly
 supports:
-  - os-name: debian
-  - os-name: ubuntu
-  - os-name: centos
-  - os-name: fedora
-  - os-name: opensuse
+  - platform-name: debian
+  - platform-name: ubuntu
+  - platform-name: centos
+  - platform-name: fedora
+  - platform-name: opensuse
+  - platform-name: suse
+  - platform-name: freebsd
+  - platform-name: amazon
+  - platform-name: arch
