@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 control 'Strongswan secrets configuration' do
   title 'should match desired lines'
 
@@ -16,7 +18,7 @@ control 'Strongswan secrets configuration' do
   end
 
   # we verify presence of all secret files
-  ['conn_a', 'conn_b'].each do |secret|
+  %w[conn_a conn_b].each do |secret|
     describe file("/etc/ipsec.secrets.d/#{secret}.secrets") do
       it { should be_file }
       it { should be_owned_by 'root' }
@@ -28,6 +30,8 @@ control 'Strongswan secrets configuration' do
   # but we only verify the full content of one
   describe file('/etc/ipsec.secrets.d/conn_a.secrets') do
     its('content') { should include '# conn_a' }
-    its('content') { should include '10.10.1.1 : PSK "v+NkxY9LLZvwj4qCC2o/gGrWDF2d21jL"' }
+    its('content') do
+      should include '10.10.1.1 : PSK "v+NkxY9LLZvwj4qCC2o/gGrWDF2d21jL"'
+    end
   end
 end

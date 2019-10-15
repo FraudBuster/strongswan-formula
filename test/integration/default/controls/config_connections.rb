@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 control 'Strongswan connections configuration' do
   title 'should match desired lines'
 
@@ -8,7 +10,7 @@ control 'Strongswan connections configuration' do
   end
 
   # we verify presence of all connection files
-  ['conn_a', 'conn_b'].each do |conn|
+  %w[conn_a conn_b].each do |conn|
     describe file("/etc/ipsec.conf.d/#{conn}.conf") do
       it { should be_file }
       it { should be_owned_by 'root' }

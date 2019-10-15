@@ -78,7 +78,7 @@ ipsec-conn-{{ connection }}-config:
     - mode: 644
     - context:
         connection: {{ connection }}
-        data: {{ data|tojson }}
+        data: {{ data|json }}
     - watch_in:
       - service: strongswan-service
 {% endfor %}
@@ -129,7 +129,7 @@ ipsec-secret-{{ secret }}-config:
     - mode: 600
     - context:
         secret: {{ secret }}
-        data: {{ data|tojson }}
+        data: {{ data|json }}
     - watch_in:
       - service: strongswan-service
 {% endfor %}
