@@ -209,3 +209,20 @@ suites:
     verifier:
       inspec_tests:
         - path: test/integration/default
+
+  - name: no_config
+    provisioner:
+      state_top:
+        base:
+          '*':
+            - strongswan
+      pillars:
+        top.sls:
+          base:
+            '*':
+              - strongswan
+      pillars_from_files:
+        strongswan.sls: test/salt/pillar/no_config.sls
+    verifier:
+      inspec_tests:
+        - path: test/integration/no_config
