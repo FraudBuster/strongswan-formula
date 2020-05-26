@@ -8,7 +8,9 @@
 # (empty `osfinger`s do not need to be listed, just added here as an example).
 ---
 # os: Ubuntu
-Ubuntu-18.04: {}
+Ubuntu-20.04:
+  service:
+    name: strongswan-starter
 
 # os: CentOS
 CentOS-6: {}
