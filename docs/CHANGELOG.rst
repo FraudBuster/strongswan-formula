@@ -2,6 +2,32 @@
 Changelog
 =========
 
+`0.2.3 <https://github.com/saltstack-formulas/strongswan-formula/compare/v0.2.2...v0.2.3>`_ (2020-05-28)
+------------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* service name on Ubuntu 20.04 (\ `c0eb7c5 <https://github.com/saltstack-formulas/strongswan-formula/commit/c0eb7c5b09b15fc9d75ba19d9dea1ef29a46cf1c>`_\ )
+* **libtofs:** “files_switch” mess up the variable exported by “map.jinja” [skip ci] (\ `28d80f5 <https://github.com/saltstack-formulas/strongswan-formula/commit/28d80f5da9a31308aae82b22cd655c0eb157b84b>`_\ )
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **gemfile:** restrict ``train`` gem version until upstream fix [skip ci] (\ `986b27e <https://github.com/saltstack-formulas/strongswan-formula/commit/986b27e0c7133498d250133ecafbb38307a943a9>`_\ )
+* **gemfile.lock:** add to repo with updated ``Gemfile`` [skip ci] (\ `9b6b829 <https://github.com/saltstack-formulas/strongswan-formula/commit/9b6b829dc475549c7491f6757b64942563339895>`_\ )
+* **inspec:** update ubuntu 2004 service tests (\ `01b816f <https://github.com/saltstack-formulas/strongswan-formula/commit/01b816f54525a6635b2708fc85de4a78856ef829>`_\ )
+* **kitchen:** avoid using bootstrap for ``master`` instances [skip ci] (\ `611d10c <https://github.com/saltstack-formulas/strongswan-formula/commit/611d10c1cb44cf4df16f0b4e2865696d804809c8>`_\ )
+* **kitchen+travis:** remove ``master-py2-arch-base-latest`` [skip ci] (\ `c6b97ee <https://github.com/saltstack-formulas/strongswan-formula/commit/c6b97ee75a10ea84f6409b231526bc7552429e4f>`_\ )
+* **travis:** add notifications => zulip [skip ci] (\ `c864c31 <https://github.com/saltstack-formulas/strongswan-formula/commit/c864c316231c73f17e5a4e6b4162319adde3eda0>`_\ )
+* **travis:** opt-in to ``dpl v2`` to complete build config validation [skip ci] (\ `0bf76ba <https://github.com/saltstack-formulas/strongswan-formula/commit/0bf76bad8f239ade9c81cef1f32050b983af7cb9>`_\ )
+* **travis:** quote pathspecs used with ``git ls-files`` [skip ci] (\ `5bd16b4 <https://github.com/saltstack-formulas/strongswan-formula/commit/5bd16b40107ccb4e1f216318ca4700500a608a7e>`_\ )
+* **travis:** run ``shellcheck`` during lint job [skip ci] (\ `e5efa45 <https://github.com/saltstack-formulas/strongswan-formula/commit/e5efa45082b1e36d20063cade376ea9c152d8dc8>`_\ )
+* **travis:** use ``major.minor`` for ``semantic-release`` version [skip ci] (\ `2a1d244 <https://github.com/saltstack-formulas/strongswan-formula/commit/2a1d244ca8c25720be44fa635451c43cad95b81f>`_\ )
+* **workflows/commitlint:** add to repo [skip ci] (\ `271aa46 <https://github.com/saltstack-formulas/strongswan-formula/commit/271aa46ba003b8bb5b398e461e9ca270ba5f72f1>`_\ )
+
 `0.2.2 <https://github.com/saltstack-formulas/strongswan-formula/compare/v0.2.1...v0.2.2>`_ (2019-11-17)
 ------------------------------------------------------------------------------------------------------------
 
