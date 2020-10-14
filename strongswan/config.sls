@@ -39,9 +39,9 @@ ipsec-global-options:
                               lookup='ipsec-global-options'
                  )
               }}
-    - mode: 644
+    - mode: '0644'
     - user: root
-    - group: root
+    - group: {{ strongswan.group }}
     - template: jinja
     - context:
         dropin_dir: {{ strongswan.config.dropin_options }}
@@ -55,7 +55,7 @@ ipsec-dropin-options:
   file.directory:
     - name: {{ strongswan.config.dropin_options }}
     - user: root
-    - group: root
+    - group: {{ strongswan.group }}
     - clean: True
 {% endif %}
 
@@ -70,8 +70,8 @@ ipsec-conn-{{ connection }}-config:
               }}
     - template: jinja
     - user: root
-    - group: root
-    - mode: 644
+    - group: {{ strongswan.group }}
+    - mode: '0644'
     - context:
         connection: {{ connection }}
         data: {{ data|json }}
@@ -87,9 +87,9 @@ ipsec-global-secrets:
                               lookup='ipsec-global-secrets'
                  )
               }}
-    - mode: 600
+    - mode: '0600'
     - user: root
-    - group: root
+    - group: {{ strongswan.group }}
     - template: jinja
     - context:
         dropin_dir: {{ strongswan.config.dropin_secrets }}
@@ -101,8 +101,8 @@ ipsec-dropin-secrets:
   file.directory:
     - name: {{ strongswan.config.dropin_secrets }}
     - user: root
-    - group: root
-    - mode: 600
+    - group: {{ strongswan.group }}
+    - mode: '0600'
     - clean: True
 {% endif %}
 
@@ -117,8 +117,8 @@ ipsec-secret-{{ secret }}-config:
               }}
     - template: jinja
     - user: root
-    - group: root
-    - mode: 600
+    - group: {{ strongswan.group }}
+    - mode: '0600'
     - context:
         secret: {{ secret }}
         data: {{ data|json }}

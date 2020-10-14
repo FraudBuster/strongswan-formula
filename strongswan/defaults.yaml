@@ -3,6 +3,7 @@
 ---
 strongswan:
   pkg: strongswan
+  group: root
   config:
     global_options: /etc/ipsec.conf
     global_secrets: /etc/ipsec.secrets

@@ -18,7 +18,13 @@ Arch: {}
 
 Alpine: {}
 
-FreeBSD: {}
+FreeBSD:
+  group: wheel
+  config:
+    global_options: /usr/local/etc/ipsec.conf
+    global_secrets: /usr/local/etc/ipsec.secrets
+    dropin_options: /usr/local/etc/ipsec.conf.d
+    dropin_secrets: /usr/local/etc/ipsec.secrets.d
 
 OpenBSD: {}
 
