@@ -2,6 +2,31 @@
 Changelog
 =========
 
+`0.3.0 <https://github.com/saltstack-formulas/strongswan-formula/compare/v0.2.3...v0.3.0>`_ (2020-10-18)
+------------------------------------------------------------------------------------------------------------
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **kitchen:** use ``saltimages`` Docker Hub where available [skip ci] (\ `830ff73 <https://github.com/saltstack-formulas/strongswan-formula/commit/830ff733fb8a4e6a58a455f592a2adf9364fcf71>`_\ )
+* **kitchen+travis:** use latest pre-salted images [skip ci] (\ `23dc3b2 <https://github.com/saltstack-formulas/strongswan-formula/commit/23dc3b22c2cebbe5686fa13077fb81e2c1d3d8c6>`_\ )
+* **pre-commit:** add to formula [skip ci] (\ `dcd0d21 <https://github.com/saltstack-formulas/strongswan-formula/commit/dcd0d214dc7e02c9a1b29a673982a57f40feb4f5>`_\ )
+* **pre-commit:** enable/disable ``rstcheck`` as relevant [skip ci] (\ `9469245 <https://github.com/saltstack-formulas/strongswan-formula/commit/946924592a8ebd0ff7af23bd8cc434aae088db41>`_\ )
+* **pre-commit:** finalise ``rstcheck`` configuration [skip ci] (\ `d88d911 <https://github.com/saltstack-formulas/strongswan-formula/commit/d88d911e6a3720fb6fae3be9e6646aee68f9f1f0>`_\ )
+
+Features
+^^^^^^^^
+
+
+* **freebsd:** adds freebsd support (\ `0e3e700 <https://github.com/saltstack-formulas/strongswan-formula/commit/0e3e700192171fb28e9d93f91227d16f2c0f21b6>`_\ )
+
+Styles
+^^^^^^
+
+
+* **libtofs.jinja:** use Black-inspired Jinja formatting [skip ci] (\ `ede6df4 <https://github.com/saltstack-formulas/strongswan-formula/commit/ede6df4c96816d92208c5cadee586cbfafd114d5>`_\ )
+
 `0.2.3 <https://github.com/saltstack-formulas/strongswan-formula/compare/v0.2.2...v0.2.3>`_ (2020-05-28)
 ------------------------------------------------------------------------------------------------------------
 
