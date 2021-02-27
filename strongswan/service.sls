@@ -10,7 +10,7 @@ strongswan-service:
   service.running:
     - name: {{ strongswan.service.name }}
     - enable: True
-    - reload: True
+    - reload: {{ strongswan.service.reload }}
     - watch:
       - file: {{ strongswan.config.global_options }}
       - file: {{ strongswan.config.global_secrets }}

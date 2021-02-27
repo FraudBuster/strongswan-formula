@@ -11,3 +11,4 @@ strongswan:
     dropin_secrets: /etc/ipsec.secrets.d
   service:
     name: strongswan
+    reload: true

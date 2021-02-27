@@ -11,6 +11,9 @@
 Ubuntu-20.04:
   service:
     name: strongswan-starter
+Ubuntu-16.04:
+  service:
+    reload: false
 
 # os: CentOS
 CentOS-6: {}
