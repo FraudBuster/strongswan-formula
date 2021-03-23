@@ -312,6 +312,7 @@ suites:
       state_top:
         base:
           '*':
+            - strongswan._mapdata
             - strongswan
       pillars:
         top.sls:
