@@ -7,6 +7,11 @@
 # Only add an `osfinger` which is/will be supported by the formula
 # (empty `osfinger`s do not need to be listed, just added here as an example).
 ---
+# os: Debian
+Debian-11:
+  service:
+    name: strongswan-starter
+
 # os: Ubuntu
 Ubuntu-20.04:
   service:
