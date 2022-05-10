@@ -13,6 +13,9 @@ Debian-11:
     name: strongswan-starter
 
 # os: Ubuntu
+Ubuntu-22.04:
+  service:
+    name: strongswan-starter
 Ubuntu-20.04:
   service:
     name: strongswan-starter
