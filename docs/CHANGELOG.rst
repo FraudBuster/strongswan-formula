@@ -2,6 +2,57 @@
 Changelog
 =========
 
+`0.4.0 <https://github.com/saltstack-formulas/strongswan-formula/compare/v0.3.0...v0.4.0>`_ (2022-06-17)
+------------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **xenial:** use ``reload: false`` for service (\ `2b436b8 <https://github.com/saltstack-formulas/strongswan-formula/commit/2b436b8f27c44ceb251d56ab4cf62abdec079dcb>`_\ )
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* update ``pre-commit`` configuration inc. for pre-commit.ci [skip ci] (\ `9de29ba <https://github.com/saltstack-formulas/strongswan-formula/commit/9de29ba9603a69d52392e6f6b685a3bd0d9aae2a>`_\ )
+* **kitchen+gitlab:** update for new pre-salted images [skip ci] (\ `9afc4e1 <https://github.com/saltstack-formulas/strongswan-formula/commit/9afc4e1d2608bc4592e4acdc209ea1e87c7e9bf8>`_\ )
+* update linters to latest versions [skip ci] (\ `25e555d <https://github.com/saltstack-formulas/strongswan-formula/commit/25e555d2ca86177277644ba87b321abbca826a7c>`_\ )
+* **3003.1:** update inc. AlmaLinux, Rocky & ``rst-lint`` [skip ci] (\ `9a54d8f <https://github.com/saltstack-formulas/strongswan-formula/commit/9a54d8f03042d07d9f81b018047a6cc35ef0af8d>`_\ )
+* **commitlint:** ensure ``upstream/master`` uses main repo URL [skip ci] (\ `a82567a <https://github.com/saltstack-formulas/strongswan-formula/commit/a82567a088cd9c3a61f0ac8348ffa525761836e2>`_\ )
+* **gemfile:** allow rubygems proxy to be provided as an env var [skip ci] (\ `ebcd938 <https://github.com/saltstack-formulas/strongswan-formula/commit/ebcd938f55d67dec6a2e512171a481d5ae832a9f>`_\ )
+* **gemfile+lock:** use ``ssf`` customised ``inspec`` repo [skip ci] (\ `0df3831 <https://github.com/saltstack-formulas/strongswan-formula/commit/0df38317549bf1ced07767af780c915f3e18a7de>`_\ )
+* **gemfile+lock:** use ``ssf`` customised ``kitchen-docker`` repo [skip ci] (\ `e134b58 <https://github.com/saltstack-formulas/strongswan-formula/commit/e134b589ad9446bfc396c78e1cde6807a59a2124>`_\ )
+* **gitlab-ci:** add ``rubocop`` linter (with ``allow_failure``\ ) [skip ci] (\ `8e4d882 <https://github.com/saltstack-formulas/strongswan-formula/commit/8e4d8821f209995ff3262245179f3c01e085dbb7>`_\ )
+* **gitlab-ci:** use GitLab CI as Travis CI replacement (\ `be21d38 <https://github.com/saltstack-formulas/strongswan-formula/commit/be21d383e1849bfd7949e53e56adaafb87b70280>`_\ )
+* **kitchen:** move ``provisioner`` block & update ``run_command`` [skip ci] (\ `2c21054 <https://github.com/saltstack-formulas/strongswan-formula/commit/2c210549b2e55b20b1c34af55845dcc29d574b44>`_\ )
+* **kitchen+ci:** update with ``3004`` pre-salted images/boxes [skip ci] (\ `25ff8cb <https://github.com/saltstack-formulas/strongswan-formula/commit/25ff8cb4b96a25febe17b8684d8588dd58ff1191>`_\ )
+* **kitchen+ci:** update with latest ``3003.2`` pre-salted images [skip ci] (\ `ef80f7f <https://github.com/saltstack-formulas/strongswan-formula/commit/ef80f7fcc423099e2f45c00b8853ffa3476d39d6>`_\ )
+* **kitchen+ci:** update with latest CVE pre-salted images [skip ci] (\ `8b3cf5c <https://github.com/saltstack-formulas/strongswan-formula/commit/8b3cf5c76faf8bc420b2530086c292f604aa67b5>`_\ )
+* **kitchen+gitlab:** update for new pre-salted images [skip ci] (\ `f0da02a <https://github.com/saltstack-formulas/strongswan-formula/commit/f0da02abbfa52bb0921bb4170a7f774b0988ea52>`_\ )
+* add Debian 11 Bullseye & update ``yamllint`` configuration [skip ci] (\ `6090e49 <https://github.com/saltstack-formulas/strongswan-formula/commit/6090e499220895d7789ce0b1287840f68261438f>`_\ )
+* **kitchen+gitlab:** remove Ubuntu 16.04 & Fedora 32 (EOL) [skip ci] (\ `f00cb73 <https://github.com/saltstack-formulas/strongswan-formula/commit/f00cb732f8a72e8e3ef72166a7003db8a3276113>`_\ )
+* add ``arch-master`` to matrix and update ``.travis.yml`` [skip ci] (\ `fafb9b8 <https://github.com/saltstack-formulas/strongswan-formula/commit/fafb9b8449eba9ad3f4f90bb4b975708bd79ed3f>`_\ )
+* **kitchen+ci:** use latest pre-salted images (after CVE) [skip ci] (\ `251c868 <https://github.com/saltstack-formulas/strongswan-formula/commit/251c86885f30edf6f5d36942efc960cf2698bc13>`_\ )
+* **kitchen+gitlab:** adjust matrix to add ``3003`` [skip ci] (\ `7da4210 <https://github.com/saltstack-formulas/strongswan-formula/commit/7da42104b85db1430989e0277bc97924ba8c33a3>`_\ )
+* **kitchen+gitlab-ci:** use latest pre-salted images [skip ci] (\ `b5a8720 <https://github.com/saltstack-formulas/strongswan-formula/commit/b5a87202c8a4e1e681950f422507d6fd97468f0e>`_\ )
+* **pre-commit:** update hook for ``rubocop`` [skip ci] (\ `645ca9e <https://github.com/saltstack-formulas/strongswan-formula/commit/645ca9e8d9a73be6fee70469b8a53031d6e4005b>`_\ )
+
+Features
+^^^^^^^^
+
+
+* **osfingermap:** add support for ``debian-11`` [skip ci] (\ `038eade <https://github.com/saltstack-formulas/strongswan-formula/commit/038eade761806a327d35cc299e017e2a6780ed90>`_\ )
+* **osfingermap:** add support for ``ubuntu-22.04`` [skip ci] (\ `8423dcd <https://github.com/saltstack-formulas/strongswan-formula/commit/8423dcd66ff911ab5da65a0399e9e4cb121d926c>`_\ )
+
+Tests
+^^^^^
+
+
+* **system:** add ``build_platform_codename`` [skip ci] (\ `3d0f14d <https://github.com/saltstack-formulas/strongswan-formula/commit/3d0f14d96a84f949505ff3b80b73615eb24d15ef>`_\ )
+* **system.rb:** add support for ``mac_os_x`` [skip ci] (\ `783420e <https://github.com/saltstack-formulas/strongswan-formula/commit/783420e5032d71a3183ba505365d047fe8db2a74>`_\ )
+* standardise use of ``share`` suite & ``_mapdata`` state [skip ci] (\ `b192413 <https://github.com/saltstack-formulas/strongswan-formula/commit/b192413a75b73b700c8d642e12637950caf5b894>`_\ )
+
 `0.3.0 <https://github.com/saltstack-formulas/strongswan-formula/compare/v0.2.3...v0.3.0>`_ (2020-10-18)
 ------------------------------------------------------------------------------------------------------------
 
