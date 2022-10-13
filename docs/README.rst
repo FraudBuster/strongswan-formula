@@ -66,12 +66,12 @@ via include list.
 Configuration is splitted:
   * for connections:
   
-    * in a main file for default options and `%default` connection. This file include files from 'dropin' directory
-    * in a 'dropin' directory where each connection has its own config file
+    * in a main file for default options and ``%default`` connection. This file include files from *dropin* directory
+    * in a *dropin* directory where each connection has its own config file
   * for secrets:
   
-    * in a main file which include files from 'dropin' directory
-    * in a 'dropin' directory where each connection has its own secret file
+    * in a main file which include files from *dropin* directory
+    * in a *dropin* directory where each connection has its own secret file
 
 ``strongswan.service``
 ^^^^^^^^^^^^^^^^^^^^^^
