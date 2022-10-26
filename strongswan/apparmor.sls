@@ -6,7 +6,7 @@
 {%- from tpldir ~ "/map.jinja" import strongswan with context %}
 {%- from tpldir ~ "/libtofs.jinja" import files_switch with context %}
 
-apparmor_usr.lib.ipsec.charon:
+stronswan-apparmor-file-rules-ipsec-dropin:
   file.managed:
     - name: {{ strongswan.apparmor.rules_file }}
     - source: {{ files_switch(['apparmor-usr.lib.ipsec.charon'],
@@ -20,9 +20,9 @@ apparmor_usr.lib.ipsec.charon:
     - context:
         secrets_dir: {{ strongswan.config.dropin_secrets }}
     - watch_in:
-      - service: apparmor_service
+      - service: stronswan-apparmor-service-apparmor
 
-apparmor_service:
+stronswan-apparmor-service-apparmor:
   service.running:
     - reload: True
     - name: apparmor

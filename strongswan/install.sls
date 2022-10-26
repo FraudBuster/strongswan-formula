@@ -5,7 +5,7 @@
 
 {#- Simulating `grains.osfinger`, which is avoided since not available in all distros #}
 {%- if [grains.os, grains.osrelease] == ['Amazon', '2'] %}
-strongswan-epel-repo:
+strongswan-install-repo-epel:
   pkgrepo.managed:
     - name: epel
     - humanname: Extra Packages for Enterprise Linux 7 - $basearch
@@ -15,9 +15,9 @@ strongswan-epel-repo:
     - gpgkey: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
     - failovermethod: priority
     - require_in:
-      - pkg: strongswan-pkg
+      - pkg: strongswan-install-package
 {%- endif %}
 
-strongswan-pkg:
+strongswan-install-package:
   pkg.installed:
     - name: {{ strongswan.pkg }}
