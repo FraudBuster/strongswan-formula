@@ -4,6 +4,8 @@
 strongswan:
   # override default core settings in lookup dict
   # lookup:
+  #   apparmor:
+  #     add_rules: false
 
   # default config
   config:

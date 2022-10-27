@@ -65,18 +65,38 @@ via include list.
 
 Configuration is splitted:
   * for connections:
-  
+
     * in a main file for default options and ``%default`` connection. This file include files from *dropin* directory
     * in a *dropin* directory where each connection has its own config file
   * for secrets:
-  
+
     * in a main file which include files from *dropin* directory
     * in a *dropin* directory where each connection has its own secret file
+
+**warning**: if you use AppArmor, you will need to add specific rules for read access to the *secrets* *dropin* directory.
+You can manage them on your own, or use the ``apparmor`` state, see below.
 
 ``strongswan.service``
 ^^^^^^^^^^^^^^^^^^^^^^
 
 This state manage the strongswan service.
+
+``strongswan.apparmor``
+^^^^^^^^^^^^^^^^^^^^^^^
+
+**This state is not run by default with the meta-state**
+**It has only been tested on recent versions of Debian, feel free to propose a PR to add support for other distributions.**
+
+It configures AppArmor rules to allow read access to the *secrets* *dropin* directory.
+It must be run explicitely or use this pillar to activate it:
+
+.. code-block::
+
+    strongswan:
+      lookup:
+        apparmor:
+          add_rules: true
+
 
 Testing
 -------
