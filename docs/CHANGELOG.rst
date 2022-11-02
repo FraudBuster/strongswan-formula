@@ -2,6 +2,27 @@
 Changelog
 =========
 
+`0.5.0 <https://github.com/saltstack-formulas/strongswan-formula/compare/v0.4.0...v0.5.0>`_ (2022-11-02)
+------------------------------------------------------------------------------------------------------------
+
+Code Refactoring
+^^^^^^^^^^^^^^^^
+
+
+* change all state IDs (\ `e26350a <https://github.com/saltstack-formulas/strongswan-formula/commit/e26350a33d62adfe8d22c5f9af2b33356741b885>`_\ )
+
+Documentation
+^^^^^^^^^^^^^
+
+
+* **readme:** fix rst syntax (\ `50205e7 <https://github.com/saltstack-formulas/strongswan-formula/commit/50205e70e027b8b3ce9011fcb56e65f3978794bd>`_\ )
+
+Features
+^^^^^^^^
+
+
+* new optional state to add AppArmor rules, refs `#6 <https://github.com/saltstack-formulas/strongswan-formula/issues/6>`_ (\ `4777622 <https://github.com/saltstack-formulas/strongswan-formula/commit/4777622c0f9daae29dd7ce5dc5535f3f6eb6fb72>`_\ )
+
 `0.4.0 <https://github.com/saltstack-formulas/strongswan-formula/compare/v0.3.0...v0.4.0>`_ (2022-06-17)
 ------------------------------------------------------------------------------------------------------------
 
