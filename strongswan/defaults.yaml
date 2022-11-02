@@ -2,6 +2,9 @@
 # vim: ft=yaml
 ---
 strongswan:
+  apparmor:
+    add_rules: false
+    rules_file: /etc/apparmor.d/local/usr.lib.ipsec.charon
   pkg: strongswan
   group: root
   config:

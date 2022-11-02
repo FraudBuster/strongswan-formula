@@ -32,7 +32,7 @@ include:
   - .install
 
 # Global options
-ipsec-global-options:
+strongswan-config-file-global-options:
   file.managed:
     - name: {{ strongswan.config.global_options }}
     - source: {{ files_switch(['ipsec.conf.jinja'],
@@ -51,7 +51,7 @@ ipsec-global-options:
 
 # Connections
 {% if connections %}
-ipsec-dropin-options:
+strongswan-config-directory-ipsec-dropin-connections:
   file.directory:
     - name: {{ strongswan.config.dropin_options }}
     - user: root
@@ -61,7 +61,7 @@ ipsec-dropin-options:
 
 {% for connection, data in connections.items() %}
   {% set dropin_file = strongswan.config.dropin_options ~ '/' ~ connection ~ '.conf' %}
-ipsec-conn-{{ connection }}-config:
+strongswan-config-file-ipsec-conn-{{ connection }}:
   file.managed:
     - name: {{ dropin_file }}
     - source: {{ files_switch(['connection.conf.jinja'],
@@ -80,7 +80,7 @@ ipsec-conn-{{ connection }}-config:
 {% endfor %}
 
 # Global secrets
-ipsec-global-secrets:
+strongswan-config-file-ipsec-global-secrets:
   file.managed:
     - name: {{ strongswan.config.global_secrets }}
     - source: {{ files_switch(['ipsec.secrets.jinja'],
@@ -97,7 +97,7 @@ ipsec-global-secrets:
 
 # Secrets
 {% if secrets %}
-ipsec-dropin-secrets:
+strongswan-config-directory-ipsec-dropin-secrets:
   file.directory:
     - name: {{ strongswan.config.dropin_secrets }}
     - user: root
@@ -108,7 +108,7 @@ ipsec-dropin-secrets:
 
 {% for secret, data in secrets.items() %}
   {% set dropin_file = strongswan.config.dropin_secrets ~ '/' ~ secret ~ '.secrets' %}
-ipsec-secret-{{ secret }}-config:
+strongswan-config-file-ipsec-secret-{{ secret }}:
   file.managed:
     - name: {{ dropin_file }}
     - source: {{ files_switch(['secret.secrets.jinja'],

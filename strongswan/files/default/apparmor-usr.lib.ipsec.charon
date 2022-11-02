@@ -1,0 +1,5 @@
+#########################################################
+# File managed by Salt. Changes risk being overwritten.
+#########################################################
+{{ secrets_dir }}/     r,
+{{ secrets_dir }}/**   r,
