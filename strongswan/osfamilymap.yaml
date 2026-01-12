@@ -6,7 +6,9 @@
 # Only add an `os_family` which is/will be supported by the formula
 # (empty `os_family`s do not need to be listed, just added here as an example).
 ---
-Debian: {}
+Debian:
+  service:
+    name: strongswan-starter
 
 RedHat: {}
 
